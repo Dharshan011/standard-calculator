@@ -29,16 +29,6 @@ Validate the HTML and CSS code.
 
 Publish the website in the given URL.
 
-## step 7:
-
-Validate the HTML and CSS code.
-
-Step 8:
-
-
-Publish the website in the given URL
-
-
 ## PROGRAM :
 ```<!DOCTYPE html>
 <html lang="en">
@@ -110,7 +100,6 @@ Publish the website in the given URL
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
   }
-
   compute() {
     let computation
     const prev = parseFloat(this.previousOperand)
@@ -136,7 +125,6 @@ Publish the website in the given URL
     this.operation = undefined
     this.previousOperand = ''
   }
-
   getDisplayNumber(number) {
     const stringNumber = number.toString()
     const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -153,7 +141,6 @@ Publish the website in the given URL
       return integerDisplay
     }
   }
-
   updateDisplay() {
     this.currentOperandTextElement.innerText =
       this.getDisplayNumber(this.currentOperand)
@@ -165,8 +152,6 @@ Publish the website in the given URL
     }
   }
 }
-
-
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -174,54 +159,43 @@ const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
-
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
-
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText)
     calculator.updateDisplay()
   })
 })
-
 operationButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
-
 equalsButton.addEventListener('click', button => {
   calculator.compute()
   calculator.updateDisplay()
 })
-
 allClearButton.addEventListener('click', button => {
   calculator.clear()
   calculator.updateDisplay()
 })
-
 deleteButton.addEventListener('click', button => {
   calculator.delete()
   calculator.updateDisplay()
 })
-
 </script>
-
-
 <style>
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: Gotham Rounded, sans-serif;
   font-weight: normal;
 }
-
 body {
   padding: 0;
   margin: 0;
   background:(to right,lightsteelblue,lemonchiffon);
 }
-
 .calculator-grid {
   display: grid;
   justify-content: center;
@@ -238,15 +212,12 @@ body {
   outline: none;
   background-color: lightgrey;
 }
-
 .calculator-grid > button:hover {
   background-color:lightyellow;
 }
-
 .span-two {
   grid-column: span 2;
 }
-
 .output {
   grid-column: 1 / -1;
   background-color: rgba(0, 0, 0, .75);
@@ -258,12 +229,10 @@ body {
   word-wrap: break-word;
   word-break: break-all;
 }
-
 .output .previous-operand {
   color:royalblue;
   font-size: 1.5rem;
 }
-
 .output .current-operand {
   color: white;
   font-size: 2.5rem;
@@ -273,7 +242,11 @@ body {
 ## OUTPUT:
 ![12](https://user-images.githubusercontent.com/113497491/214309918-6aecc6f7-94ff-494f-98c2-66fc30c01abb.png)
 
+
+
 ![13](https://user-images.githubusercontent.com/113497491/214309986-fa188e7d-0542-48b5-8049-ac638e6883a3.png)
+
+
 
 ![14](https://user-images.githubusercontent.com/113497491/214310037-96b36680-54e9-4e9c-97bb-ffd7a0ea7e6f.png)
 
